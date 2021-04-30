@@ -1,9 +1,6 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\DriveTestFinderLib",
-    "\\DriveTestFinderRepository",
-    "\\DriveTestFinderRepository\\Entities"
+    ""
   ],
   "SelectedNode": "\\DriveTestFinderRepository\\DriveTestFinderRepository.cs",
   "PreviewInSolutionExplorer": false
