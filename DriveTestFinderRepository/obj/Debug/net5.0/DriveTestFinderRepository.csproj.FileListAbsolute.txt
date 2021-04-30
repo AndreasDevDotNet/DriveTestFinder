@@ -1,0 +1,15 @@
+C:\Users\andre\Source\Repos\AndreasDevDotNet\DriveTestFinder\DriveTestFinderRepository\bin\Debug\net5.0\DriveTestFinderRepository.deps.json
+C:\Users\andre\Source\Repos\AndreasDevDotNet\DriveTestFinder\DriveTestFinderRepository\bin\Debug\net5.0\DriveTestFinderRepository.dll
+C:\Users\andre\Source\Repos\AndreasDevDotNet\DriveTestFinder\DriveTestFinderRepository\bin\Debug\net5.0\ref\DriveTestFinderRepository.dll
+C:\Users\andre\Source\Repos\AndreasDevDotNet\DriveTestFinder\DriveTestFinderRepository\bin\Debug\net5.0\DriveTestFinderRepository.pdb
+C:\Users\andre\Source\Repos\AndreasDevDotNet\DriveTestFinder\DriveTestFinderRepository\obj\Debug\net5.0\DriveTestFinderRepository.csprojAssemblyReference.cache
+C:\Users\andre\Source\Repos\AndreasDevDotNet\DriveTestFinder\DriveTestFinderRepository\obj\Debug\net5.0\DriveTestFinderRepository.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\andre\Source\Repos\AndreasDevDotNet\DriveTestFinder\DriveTestFinderRepository\obj\Debug\net5.0\DriveTestFinderRepository.AssemblyInfoInputs.cache
+C:\Users\andre\Source\Repos\AndreasDevDotNet\DriveTestFinder\DriveTestFinderRepository\obj\Debug\net5.0\DriveTestFinderRepository.AssemblyInfo.cs
+C:\Users\andre\Source\Repos\AndreasDevDotNet\DriveTestFinder\DriveTestFinderRepository\obj\Debug\net5.0\DriveTestFinderRepository.csproj.CoreCompileInputs.cache
+C:\Users\andre\Source\Repos\AndreasDevDotNet\DriveTestFinder\DriveTestFinderRepository\obj\Debug\net5.0\DriveTestFinderRepository.dll
+C:\Users\andre\Source\Repos\AndreasDevDotNet\DriveTestFinder\DriveTestFinderRepository\obj\Debug\net5.0\ref\DriveTestFinderRepository.dll
+C:\Users\andre\Source\Repos\AndreasDevDotNet\DriveTestFinder\DriveTestFinderRepository\obj\Debug\net5.0\DriveTestFinderRepository.pdb
+C:\Users\andre\Source\Repos\AndreasDevDotNet\DriveTestFinder\DriveTestFinderRepository\bin\Debug\net5.0\DriveTestFinderRepository.runtimeconfig.json
+C:\Users\andre\Source\Repos\AndreasDevDotNet\DriveTestFinder\DriveTestFinderRepository\bin\Debug\net5.0\DriveTestFinderRepository.runtimeconfig.dev.json
+C:\Users\andre\Source\Repos\AndreasDevDotNet\DriveTestFinder\DriveTestFinderRepository\obj\Debug\net5.0\DriveTestFinderRepository.genruntimeconfig.cache
