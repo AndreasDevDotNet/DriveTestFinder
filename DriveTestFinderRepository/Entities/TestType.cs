@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-#nullable disable
+﻿using System.Collections.Generic;
 
 namespace DriveTestFinderRepository.Entities
 {
@@ -17,5 +14,6 @@ namespace DriveTestFinderRepository.Entities
 
         public virtual ICollection<TestOccasion> TestOccasions { get; set; }
         public virtual ICollection<UserSearch> UserSearches { get; set; }
+        public virtual ICollection<LicenseTestType> LicenseTestTypes { get; set; }
     }
 }

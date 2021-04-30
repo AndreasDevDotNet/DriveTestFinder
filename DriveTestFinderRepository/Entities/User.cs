@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-#nullable disable
-
-namespace DriveTestFinderRepository.Entities
+﻿namespace DriveTestFinderRepository.Entities
 {
     public class User : IEntity
     {
@@ -15,10 +10,10 @@ namespace DriveTestFinderRepository.Entities
         public string Email { get; set; }
         public bool NotifyByPush { get; set; }
         public bool NotifyByEmail { get; set; }
-        public int Language { get; set; }
-        public int Subscription { get; set; }
+        public int LanguageId { get; set; }
+        public int SubscriptionId { get; set; }
 
-        public virtual Language LanguageNavigation { get; set; }
-        public virtual Subscription SubscriptionNavigation { get; set; }
+        public virtual Language Language { get; set; }
+        public virtual Subscription Subscription { get; set; }
     }
 }

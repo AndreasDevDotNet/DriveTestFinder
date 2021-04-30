@@ -26,6 +26,7 @@ namespace DriveTestFinderRepository
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<UserSearch> UserSearches { get; set; }
         public virtual DbSet<VehicleType> VehicleTypes { get; set; }
+        public virtual DbSet<LicenseTestType> LicenseTestTypes { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -55,6 +56,25 @@ namespace DriveTestFinderRepository
                 entity.Property(e => e.LicenseId).ValueGeneratedNever();
 
                 entity.Property(e => e.Description).HasMaxLength(50);
+            });
+
+            modelBuilder.Entity<LicenseTestType>(entity =>
+            {
+                entity.HasKey(e => new { e.LicenseId, e.TestTypeId });
+
+                entity.ToTable("License_TestType");
+
+                entity.HasOne(d => d.License)
+                    .WithMany(p => p.LicenseTestTypes)
+                    .HasForeignKey(d => d.LicenseId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_License_TestType_License");
+
+                entity.HasOne(d => d.TestType)
+                    .WithMany(p => p.LicenseTestTypes)
+                    .HasForeignKey(d => d.TestTypeId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_License_TestType_TestType");
             });
 
             modelBuilder.Entity<Location>(entity =>
@@ -91,27 +111,27 @@ namespace DriveTestFinderRepository
                     .IsRequired()
                     .HasMaxLength(10);
 
-                entity.HasOne(d => d.LanguageNavigation)
+                entity.HasOne(d => d.Language)
                     .WithMany(p => p.TestOccasions)
-                    .HasForeignKey(d => d.Language)
+                    .HasForeignKey(d => d.LanguageId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_TestOccasion_Language");
 
-                entity.HasOne(d => d.LocationNavigation)
+                entity.HasOne(d => d.Location)
                     .WithMany(p => p.TestOccasions)
-                    .HasForeignKey(d => d.Location)
+                    .HasForeignKey(d => d.LocationId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_TestOccasion_Location");
 
-                entity.HasOne(d => d.TestTypeNavigation)
+                entity.HasOne(d => d.TestType)
                     .WithMany(p => p.TestOccasions)
-                    .HasForeignKey(d => d.TestType)
+                    .HasForeignKey(d => d.TestTypeId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_TestOccasion_TestType");
 
-                entity.HasOne(d => d.VehicleTypeNavigation)
+                entity.HasOne(d => d.VehicleType)
                     .WithMany(p => p.TestOccasions)
-                    .HasForeignKey(d => d.VehicleType)
+                    .HasForeignKey(d => d.VehicleTypeId)
                     .HasConstraintName("FK_TestOccasion_VehicleType");
             });
 
@@ -142,15 +162,15 @@ namespace DriveTestFinderRepository
 
                 entity.Property(e => e.Phone).HasMaxLength(50);
 
-                entity.HasOne(d => d.LanguageNavigation)
+                entity.HasOne(d => d.Language)
                     .WithMany(p => p.Users)
-                    .HasForeignKey(d => d.Language)
+                    .HasForeignKey(d => d.LanguageId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_User_Language");
 
-                entity.HasOne(d => d.SubscriptionNavigation)
+                entity.HasOne(d => d.Subscription)
                     .WithMany(p => p.Users)
-                    .HasForeignKey(d => d.Subscription)
+                    .HasForeignKey(d => d.SubscriptionId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_User_Subscription");
             });
@@ -165,27 +185,27 @@ namespace DriveTestFinderRepository
                     .HasColumnType("date")
                     .HasDefaultValueSql("(getdate())");
 
-                entity.HasOne(d => d.LicenseNavigation)
+                entity.HasOne(d => d.License)
                     .WithMany(p => p.UserSearches)
-                    .HasForeignKey(d => d.License)
+                    .HasForeignKey(d => d.LicenseId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_UserSearch_License");
 
-                entity.HasOne(d => d.LocationNavigation)
+                entity.HasOne(d => d.Location)
                     .WithMany(p => p.UserSearches)
-                    .HasForeignKey(d => d.Location)
+                    .HasForeignKey(d => d.LocationId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_UserSearch_Location");
 
-                entity.HasOne(d => d.TestTypeNavigation)
+                entity.HasOne(d => d.TestType)
                     .WithMany(p => p.UserSearches)
-                    .HasForeignKey(d => d.TestType)
+                    .HasForeignKey(d => d.TestTypeId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_UserSearch_TestType");
 
-                entity.HasOne(d => d.VehicleTypeNavigation)
+                entity.HasOne(d => d.VehicleType)
                     .WithMany(p => p.UserSearches)
-                    .HasForeignKey(d => d.VehicleType)
+                    .HasForeignKey(d => d.VehicleTypeId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_UserSearch_VehicleType");
             });
@@ -198,7 +218,6 @@ namespace DriveTestFinderRepository
 
                 entity.Property(e => e.Description).HasMaxLength(60);
             });
-
         }
 
     }

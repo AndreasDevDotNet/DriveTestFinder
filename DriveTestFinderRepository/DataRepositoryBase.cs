@@ -6,11 +6,11 @@ using System.Linq.Expressions;
 
 namespace DriveTestFinderRepository
 {
-    public class DriveTestFinderRepository<TEntity> where TEntity : class, IEntity, new()
+    public abstract class DataRepositoryBase<TEntity> where TEntity : class, IEntity, new()
     {
         private DriveTestFinderMasterContext _dbContext;
 
-        public DriveTestFinderRepository(string connectionString)
+        public DataRepositoryBase(string connectionString)
         {
             _dbContext = new DriveTestFinderMasterContext(connectionString);
         }
@@ -25,10 +25,21 @@ namespace DriveTestFinderRepository
             return _dbContext.Set<TEntity>();
         }
 
-        public void Add(TEntity entity)
+        public void Add(TEntity entity, bool saveChanges = false)
+        {
+            _dbContext.Set<TEntity>().Add(entity);
+            if(saveChanges) _dbContext.SaveChanges();
+        }
+
+        public void Delete(TEntity entity, bool saveChanges = false)
         {
             _dbContext.Set<TEntity>().Remove(entity);
-            _dbContext.SaveChanges();
+            if (saveChanges) _dbContext.SaveChanges();
+        }
+
+        public int SaveChanges()
+        {
+            return _dbContext.SaveChanges();
         }
     }
 }
