@@ -25,3 +25,9 @@ C:\Users\andreas.kristiansen\Source\Repos\AndreasDevDotNet\DriveTestFinder\Drive
 C:\Users\andreas.kristiansen\Source\Repos\AndreasDevDotNet\DriveTestFinder\DriveTestFinderLib\obj\Debug\net5.0\ref\DriveTestFinderLib.dll
 C:\Users\andreas.kristiansen\Source\Repos\AndreasDevDotNet\DriveTestFinder\DriveTestFinderLib\obj\Debug\net5.0\DriveTestFinderLib.pdb
 C:\Users\andreas.kristiansen\Source\Repos\AndreasDevDotNet\DriveTestFinder\DriveTestFinderLib\obj\Debug\net5.0\DriveTestFinderLib.genruntimeconfig.cache
+C:\Users\andre\Source\Repos\AndreasDevDotNet\DriveTestFinder\DriveTestFinderLib\bin\Debug\net5.0\DriveTestFinderLib.runtimeconfig.json
+C:\Users\andre\Source\Repos\AndreasDevDotNet\DriveTestFinder\DriveTestFinderLib\bin\Debug\net5.0\DriveTestFinderLib.runtimeconfig.dev.json
+C:\Users\andre\Source\Repos\AndreasDevDotNet\DriveTestFinder\DriveTestFinderLib\obj\Debug\net5.0\DriveTestFinderLib.genruntimeconfig.cache
+C:\Users\andre\Source\Repos\AndreasDevDotNet\DriveTestFinder\DriveTestFinderLib\bin\Debug\net5.0\DriveTestFinderRepository.dll
+C:\Users\andre\Source\Repos\AndreasDevDotNet\DriveTestFinder\DriveTestFinderLib\bin\Debug\net5.0\DriveTestFinderRepository.pdb
+C:\Users\andre\Source\Repos\AndreasDevDotNet\DriveTestFinder\DriveTestFinderLib\obj\Debug\net5.0\DriveTestFinderLib.csproj.CopyComplete

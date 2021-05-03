@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.31129.286
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DriveTestFinderLib", "DriveTestFinderLib\DriveTestFinderLib.csproj", "{72FA2676-3F0F-4702-B243-9F189CBCA75D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DriveTestFinderRepository", "DriveTestFinderRepository\DriveTestFinderRepository.csproj", "{370EAE6D-4DDD-4144-A912-F36B2ED9ECB2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DriveTestFinderRepository", "DriveTestFinderRepository\DriveTestFinderRepository.csproj", "{370EAE6D-4DDD-4144-A912-F36B2ED9ECB2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DriveTestFinderAPI", "DriveTestFinderAPI\DriveTestFinderAPI.csproj", "{BE6FBB4E-3F97-4D37-9177-458A439E5446}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{370EAE6D-4DDD-4144-A912-F36B2ED9ECB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{370EAE6D-4DDD-4144-A912-F36B2ED9ECB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{370EAE6D-4DDD-4144-A912-F36B2ED9ECB2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE6FBB4E-3F97-4D37-9177-458A439E5446}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE6FBB4E-3F97-4D37-9177-458A439E5446}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE6FBB4E-3F97-4D37-9177-458A439E5446}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE6FBB4E-3F97-4D37-9177-458A439E5446}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

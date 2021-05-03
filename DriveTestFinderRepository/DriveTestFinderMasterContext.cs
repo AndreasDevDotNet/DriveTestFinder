@@ -27,6 +27,8 @@ namespace DriveTestFinderRepository
         public virtual DbSet<UserSearch> UserSearches { get; set; }
         public virtual DbSet<VehicleType> VehicleTypes { get; set; }
         public virtual DbSet<LicenseTestType> LicenseTestTypes { get; set; }
+        public virtual DbSet<Login> Logins { get; set; }
+        public virtual DbSet<LoginRole> LoginRoles { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -160,6 +162,10 @@ namespace DriveTestFinderRepository
                     .IsRequired()
                     .HasMaxLength(100);
 
+                entity.Property(e => e.SocialSecurityNumber)
+                    .IsRequired()
+                    .HasMaxLength(50);
+
                 entity.Property(e => e.Phone).HasMaxLength(50);
 
                 entity.HasOne(d => d.Language)
@@ -173,6 +179,12 @@ namespace DriveTestFinderRepository
                     .HasForeignKey(d => d.SubscriptionId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_User_Subscription");
+
+                entity.HasOne(d => d.Login)
+                    .WithMany(p => p.Users)
+                    .HasForeignKey(d => d.UserId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Login_User");
             });
 
             modelBuilder.Entity<UserSearch>(entity =>
@@ -217,6 +229,29 @@ namespace DriveTestFinderRepository
                 entity.Property(e => e.VehicleTypeId).ValueGeneratedNever();
 
                 entity.Property(e => e.Description).HasMaxLength(60);
+            });
+
+            modelBuilder.Entity<Login>(entity =>
+            {
+                entity.ToTable("Login");
+
+                entity.HasKey(e => e.LoginId);
+                entity.Property(e => e.LoginId).ValueGeneratedNever();
+                entity.Property(e => e.UserName).IsRequired().HasMaxLength(50);
+                entity.Property(e => e.Password).IsRequired().HasMaxLength(50);
+
+                entity.HasOne(x => x.Role)
+                    .WithMany(x => x.Logins)
+                    .HasForeignKey(d => d.RoleId)
+                    .HasConstraintName("FK_Login_LoginRole");
+            });
+
+            modelBuilder.Entity<LoginRole>(entity =>
+            {
+                entity.ToTable("LoginTable");
+
+                entity.Property(e => e.LoginRoleId).ValueGeneratedNever();
+                entity.Property(e => e.Description).HasMaxLength(50); ;
             });
         }
 

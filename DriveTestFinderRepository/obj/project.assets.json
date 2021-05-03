@@ -5763,33 +5763,31 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\andreas.kristiansen\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\andre\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\andreas.kristiansen\\Source\\Repos\\AndreasDevDotNet\\DriveTestFinder\\DriveTestFinderRepository\\DriveTestFinderRepository.csproj",
+      "projectUniqueName": "C:\\Users\\andre\\Source\\Repos\\AndreasDevDotNet\\DriveTestFinder\\DriveTestFinderRepository\\DriveTestFinderRepository.csproj",
       "projectName": "DriveTestFinderRepository",
-      "projectPath": "C:\\Users\\andreas.kristiansen\\Source\\Repos\\AndreasDevDotNet\\DriveTestFinder\\DriveTestFinderRepository\\DriveTestFinderRepository.csproj",
-      "packagesPath": "C:\\Users\\andreas.kristiansen\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\andreas.kristiansen\\Source\\Repos\\AndreasDevDotNet\\DriveTestFinder\\DriveTestFinderRepository\\obj\\",
+      "projectPath": "C:\\Users\\andre\\Source\\Repos\\AndreasDevDotNet\\DriveTestFinder\\DriveTestFinderRepository\\DriveTestFinderRepository.csproj",
+      "packagesPath": "C:\\Users\\andre\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\andre\\Source\\Repos\\AndreasDevDotNet\\DriveTestFinder\\DriveTestFinderRepository\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\andreas.kristiansen\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 19.2.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\andre\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\DevExpress 19.2\\Components\\System\\Components\\Packages": {},
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "http://tfs02.pector.se/tfs/Products/_packaging/PectorPacs/nuget/v3/index.json": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

@@ -20,6 +20,11 @@ namespace DriveTestFinderRepository
             return _dbContext.Set<TEntity>().Where(where);
         }
 
+        public TEntity FindOne(Expression<Func<TEntity, bool>> where)
+        {
+            return _dbContext.Set<TEntity>().SingleOrDefault(where);
+        }
+
         public IEnumerable<TEntity> GetAll()
         {
             return _dbContext.Set<TEntity>();
