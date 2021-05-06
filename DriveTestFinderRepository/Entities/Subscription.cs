@@ -1,8 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+
+#nullable disable
 
 namespace DriveTestFinderRepository.Entities
 {
-    public class Subscription : IEntity
+    public partial class Subscription : IEntity
     {
         public Subscription()
         {

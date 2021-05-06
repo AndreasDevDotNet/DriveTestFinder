@@ -1,8 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
+
+#nullable disable
 
 namespace DriveTestFinderRepository.Entities
 {
-    public class TestOccasion : IEntity
+    public partial class TestOccasion : IEntity
     {
         public int TestOccasionId { get; set; }
         public int TestTypeId { get; set; }

@@ -1,12 +1,16 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+
+#nullable disable
 
 namespace DriveTestFinderRepository.Entities
 {
-    public class VehicleType : IEntity
+    public partial class VehicleType : IEntity
     {
         public VehicleType()
         {
             TestOccasions = new HashSet<TestOccasion>();
+            UserSearches = new HashSet<UserSearch>();
         }
 
         public int VehicleTypeId { get; set; }

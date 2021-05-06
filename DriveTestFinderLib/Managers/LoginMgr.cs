@@ -1,10 +1,7 @@
 ﻿using DriveTestFinderLib.Model.DTO;
 using DriveTestFinderRepository.Repositories;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace DriveTestFinderLib.Managers
 {
@@ -21,8 +18,8 @@ namespace DriveTestFinderLib.Managers
         {
             var decodedPassword = Encoding.UTF8.GetString(Convert.FromBase64String(passWord));
 
-            var user = _userRepository.FindOne(x => x.Login.UserName == userName && x.Login.Password == decodedPassword);
-
+            var user = _userRepository.FindOne(x => x.UserName == userName && x.Password == decodedPassword);
+                                        
             if(user != null)
             {
                 return UserData.FromUser(user);

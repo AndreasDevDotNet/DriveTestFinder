@@ -1,6 +1,11 @@
-﻿namespace DriveTestFinderRepository.Entities
+﻿using System;
+using System.Collections.Generic;
+
+#nullable disable
+
+namespace DriveTestFinderRepository.Entities
 {
-    public class User : IEntity
+    public partial class User : IEntity
     {
         public int UserId { get; set; }
         public string FirstName { get; set; }
@@ -12,10 +17,13 @@
         public bool NotifyByEmail { get; set; }
         public int LanguageId { get; set; }
         public int SubscriptionId { get; set; }
-        public int LoginId { get; set; }
+        public string UserName { get; set; }
+        public string Password { get; set; }
+        public int UserRoleId { get; set; }
 
         public virtual Language Language { get; set; }
         public virtual Subscription Subscription { get; set; }
-        public virtual Login Login { get; set; }
+        public virtual UserRole UserRole { get; set; }
+        public virtual ICollection<UserSearch> UserSearches { get; set; }
     }
 }

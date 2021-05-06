@@ -2,8 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using static DriveTestFinderLib.Model.DTO.Enums;
 
 namespace DriveTestFinderLib.Model.DTO
@@ -35,15 +33,35 @@ namespace DriveTestFinderLib.Model.DTO
                 LanguageId = user.LanguageId,
                 NotifyByEmail = user.NotifyByEmail,
                 NotifyByPush = user.NotifyByPush,
-                UserName = user.Login.UserName,
-                Password = user.Login.Password,
+                UserName = user.UserName,
+                Password = user.Password,
                 Phone = user.Phone,
-                Role = (RoleEnum)user.Login.Role.LoginRoleId,
+                Role = (RoleEnum)user.UserRoleId,
                 SocialSecurityNumber = user.SocialSecurityNumber,
-                Subscription = (SubscriptionEnum)user.Subscription.SubscriptionId
+                Subscription = (SubscriptionEnum)user.SubscriptionId
             };
 
             return ud;
+        }
+
+        public static List<UserData> FromUsers(IEnumerable<User> users)
+        {
+            return users.Select(user => new UserData 
+            {
+                UserId = user.UserId,
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                Email = user.Email,
+                LanguageId = user.LanguageId,
+                NotifyByEmail = user.NotifyByEmail,
+                NotifyByPush = user.NotifyByPush,
+                UserName = user.UserName,
+                Password = user.Password,
+                Phone = user.Phone,
+                Role = (RoleEnum)user.UserRoleId,
+                SocialSecurityNumber = user.SocialSecurityNumber,
+                Subscription = (SubscriptionEnum)user.SubscriptionId
+            }).ToList();
         }
     }
 }

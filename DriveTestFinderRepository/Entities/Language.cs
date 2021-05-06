@@ -1,8 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+
+#nullable disable
 
 namespace DriveTestFinderRepository.Entities
 {
-    public class Language : IEntity
+    public partial class Language : IEntity
     {
         public Language()
         {

@@ -1,9 +1,9 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using DriveTestFinderLib.Managers;
+using DriveTestFinderLib.Model.DTO;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System;
+using Microsoft.Extensions.Configuration;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace DriveTestFinderAPI.Controllers
 {
@@ -11,5 +11,19 @@ namespace DriveTestFinderAPI.Controllers
     [ApiController]
     public class UsersController : ControllerBase
     {
+        private readonly UserMgr _userMgr;
+
+        public UsersController(IConfiguration configuration)
+        {
+            _userMgr = new UserMgr(configuration.GetConnectionString("DriveTestMaster"));
+        }
+
+        [Route("[action]")]
+        [Authorize(Policy = "Admin")]
+        [HttpGet]
+        public ActionResult<List<UserData>> GetAll()
+        {
+            return _userMgr.GetAllUsers();
+        }
     }
 }

@@ -14,10 +14,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Util\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\DriveTestFinderRepository\DriveTestFinderRepository.csproj" />
   </ItemGroup>
 

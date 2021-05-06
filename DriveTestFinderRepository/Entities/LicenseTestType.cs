@@ -1,6 +1,11 @@
-﻿namespace DriveTestFinderRepository.Entities
+﻿using System;
+using System.Collections.Generic;
+
+#nullable disable
+
+namespace DriveTestFinderRepository.Entities
 {
-    public class LicenseTestType : IEntity
+    public partial class LicenseTestType : IEntity
     {
         public int LicenseId { get; set; }
         public int TestTypeId { get; set; }

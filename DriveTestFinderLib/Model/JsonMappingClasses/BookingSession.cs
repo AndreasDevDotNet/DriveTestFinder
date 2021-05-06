@@ -4,6 +4,15 @@ namespace DriveTestFinderLib.Model.JsonMappingClasses
 {
     public class BookingSession
     {
+        public BookingSession()
+        {
+            BookingModeId = 0;
+            IgnoreDebt = false;
+            IgnoreBookingHindrance = false;
+            ExaminationTypeId = 0;
+            RescheduleTypeId = "0";
+        }
+
         [JsonProperty("socialSecurityNumber")]
         public string SocialSecurityNumber { get; set; }
         [JsonProperty("licenceId")]
