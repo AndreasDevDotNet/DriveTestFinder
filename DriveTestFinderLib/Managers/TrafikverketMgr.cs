@@ -1,11 +1,9 @@
-﻿using DriveTestFinderLib.Model.DTO;
-using DriveTestFinderLib.Model.JsonMappingClasses;
+﻿using DriveTestFinderLib.Model.JsonMappingClasses;
 using DriveTestFinderLib.Model.Request;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +21,8 @@ namespace DriveTestFinderLib.Managers
             _baseUri = baseUri;
         }
 
+        #region SearchTestOccasions
+
         internal async Task<List<TestOccasionJson>> SearchTestOccasions(SearchRequest searchRequest)
         {
             var bookingRequest = intializeBookingRequest(searchRequest);
@@ -38,7 +38,7 @@ namespace DriveTestFinderLib.Managers
 
             var bookingResponse = await _httpClient.SendAsync(request);
 
-            if(!bookingResponse.IsSuccessStatusCode)
+            if (!bookingResponse.IsSuccessStatusCode)
             {
                 return null;
             }
@@ -48,41 +48,6 @@ namespace DriveTestFinderLib.Managers
             var testOccasions = parseTestOccasions(bookingResponseJson);
 
             return testOccasions;
-        }
-
-        
-        internal async Task<bool> CheckBookingHindrances(string socialSecurityNumber, int licenceId)
-        {
-            var bookingSession = new BookingSession { SocialSecurityNumber = socialSecurityNumber, LicenceId = licenceId };
-
-            var request = new HttpRequestMessage(
-                HttpMethod.Post,
-                _baseUri + "/boka/booking-hindrances"
-            );
-
-            var bookingSessionJson = JsonConvert.SerializeObject(bookingSession);
-            request.Content = new StringContent(bookingSessionJson, Encoding.UTF8, "application/json");
-
-            var bookingHindranceResponse = await _httpClient.SendAsync(request);
-
-            if(!bookingHindranceResponse.IsSuccessStatusCode)
-            {
-                return false;
-            }
-
-            var bookingHindranceResponseJson = await bookingHindranceResponse.Content.ReadAsStringAsync();
-
-            return parseCanBookLicenseResponse(bookingHindranceResponseJson);
-        }
-
-        private bool parseCanBookLicenseResponse(string bookingHindranceResponseJson)
-        {
-            var hindranceData = JObject.Parse(bookingHindranceResponseJson);
-            var hindranceDataJson = hindranceData["data"].ToString();
-
-            var canBookLicenseResponse = JsonConvert.DeserializeObject<CanBookLicenseResponse>(hindranceDataJson);
-
-            return canBookLicenseResponse.CanBookLicence;
         }
 
         private List<TestOccasionJson> parseTestOccasions(string testOccasionsJson)
@@ -140,5 +105,47 @@ namespace DriveTestFinderLib.Managers
 
             return newRequest;
         }
+
+        #endregion
+
+        #region CheckBookingHindrances
+
+        internal async Task<bool> CheckBookingHindrances(string socialSecurityNumber, int licenceId)
+        {
+            var bookingSession = new BookingSession { SocialSecurityNumber = socialSecurityNumber, LicenceId = licenceId };
+
+            var request = new HttpRequestMessage(
+                HttpMethod.Post,
+                _baseUri + "/boka/booking-hindrances"
+            );
+
+            var bookingSessionJson = JsonConvert.SerializeObject(bookingSession);
+            request.Content = new StringContent(bookingSessionJson, Encoding.UTF8, "application/json");
+
+            var bookingHindranceResponse = await _httpClient.SendAsync(request);
+
+            if (!bookingHindranceResponse.IsSuccessStatusCode)
+            {
+                return false;
+            }
+
+            var bookingHindranceResponseJson = await bookingHindranceResponse.Content.ReadAsStringAsync();
+
+            return parseCanBookLicenseResponse(bookingHindranceResponseJson);
+        }
+
+        private bool parseCanBookLicenseResponse(string bookingHindranceResponseJson)
+        {
+            var hindranceData = JObject.Parse(bookingHindranceResponseJson);
+            var hindranceDataJson = hindranceData["data"].ToString();
+
+            var canBookLicenseResponse = JsonConvert.DeserializeObject<CanBookLicenseResponse>(hindranceDataJson);
+
+            return canBookLicenseResponse.CanBookLicence;
+        } 
+
+        #endregion
+
+
     }
 }

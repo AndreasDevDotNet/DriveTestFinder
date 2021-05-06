@@ -1,18 +1,17 @@
 ﻿using DriveTestFinderLib.Model.DTO;
 using DriveTestFinderLib.Model.JsonMappingClasses;
 using DriveTestFinderLib.Model.Request;
+using DriveTestFinderRepository.Entities;
 using DriveTestFinderRepository.Repositories;
-using System;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace DriveTestFinderLib.Managers
 {
     public class SearchMgr
     {
-        private string _trafikVerketBaseUri;
         private readonly TrafikverketMgr _trafikverketMgr;
         private readonly TestOccasionRepository _testOccasionRepository;
 
@@ -22,25 +21,73 @@ namespace DriveTestFinderLib.Managers
             _testOccasionRepository = new TestOccasionRepository(connectionString);
         }
 
-        public async Task<TestOccasionData> SearchTests(SearchRequest searchRequest)
+        #region Search Tests
+
+        public async Task<List<TestOccasionData>> SearchTests(SearchRequest searchRequest)
         {
             var testOccasionsJson = await _trafikverketMgr.SearchTestOccasions(searchRequest);
 
-            var newTestOccasions = convertJsonMappingToDTO(testOccasionsJson, searchRequest.UserId);
-            var testOccasionsFromDb = getTestOccasionsFromDB(searchRequest);
+            var newTestOccasionDataList = convertJsonMappingToDTO(testOccasionsJson, searchRequest.UserId);
+            var testOccasionDataFromDbList = getTestOccasionsFromDB(searchRequest, out List<TestOccasion> testOccasionsDbList);
 
-            //newTestOccasions = 
+            newTestOccasionDataList = newTestOccasionDataList.Except(testOccasionDataFromDbList, new TestOccasionComparer()).ToList();
+
+            if (searchRequest.SaveResultInDB && newTestOccasionDataList.Count > 0)
+            {
+                resetIsNewFlag(testOccasionsDbList);
+                await saveTestOccasionsInDB(newTestOccasionDataList);
+            }
+
+            if (searchRequest.OnlyReturnNew)
+            {
+                return newTestOccasionDataList;
+            }
+            else
+            {
+                return newTestOccasionDataList.Union(testOccasionDataFromDbList.Where(x => x.ExaminationDate >= searchRequest.FromDate), new TestOccasionComparer()).ToList();
+            }
 
         }
 
-        private List<TestOccasionData> getTestOccasionsFromDB(SearchRequest searchRequest)
+        private async Task resetIsNewFlag(List<TestOccasion> testOccasionsFromDb)
         {
-            var testOccasionsFromDb = _testOccasionRepository.Find(x =>
+            testOccasionsFromDb.ForEach(x => x.IsNew = false);
+            await _testOccasionRepository.UpdateManyAsync(testOccasionsFromDb);
+        }
+
+        private async Task saveTestOccasionsInDB(List<TestOccasionData> newTestOccasions)
+        {
+            var testOccasionsToAdd = newTestOccasions.Select(x => new TestOccasion
+            {
+                Cost = x.Cost,
+                CostText = x.CostText,
+                ExaminationDate = x.ExaminationDate,
+                ExaminationName = x.ExaminationName,
+                ExaminationTime = x.ExaminationTime,
+                IncreasedFee = x.IncreasedFee,
+                IsEducatorBooking = x.IsEducatorBooking,
+                IsLateCancellation = x.IsLateCancellation,
+                IsNew = true,
+                LanguageId = x.LanguageId,
+                LocationId = x.LocationId,
+                OccasionChoiceId = x.OccasionChoiceId,
+                TestTypeId = x.TestTypeId,
+                UserId = x.UserId,
+                VehicleTypeId = x.VehicleTypeId
+            }).ToList();
+
+            await _testOccasionRepository.AddManyAsync(testOccasionsToAdd);
+        }
+
+        private List<TestOccasionData> getTestOccasionsFromDB(SearchRequest searchRequest, out List<TestOccasion> testOccasionsDbList)
+        {
+            var testOccasionsFromDb = _testOccasionRepository.FindQueryable(x =>
                                                         x.UserId == searchRequest.UserId &&
                                                         x.TestTypeId == searchRequest.TestTypeId &&
                                                         x.VehicleTypeId == searchRequest.VehicleTypeId &&
                                                         x.LocationId == searchRequest.LocationId &&
-                                                        x.LanguageId == searchRequest.LanguageId);
+                                                        x.LanguageId == searchRequest.LanguageId)
+                                                        .Include(x => x.Location).ToList();
 
             var testOccasions = new List<TestOccasionData>();
 
@@ -65,6 +112,8 @@ namespace DriveTestFinderLib.Managers
                     UserId = testOccasion.UserId
                 });
             }
+
+            testOccasionsDbList = testOccasionsFromDb;
 
             return testOccasions.Distinct(new TestOccasionComparer()).ToList();
         }
@@ -91,18 +140,23 @@ namespace DriveTestFinderLib.Managers
                     LanguageId = testOccasion.LanguageId,
                     LocationId = testOccasion.LocationId,
                     LocationName = testOccasion.LocationName,
-                    UserId = userId
+                    UserId = userId,
+                    IsNew = true
                 });
             }
 
             return newTestOccasions.Distinct(new TestOccasionComparer()).ToList();
         }
 
-        public async Task<bool> CanBookTest(CheckBookingHindranceRequest checkBookingHindranceRequest)
+        #endregion
+
+        #region CheckBookingHindrances
+
+        public async Task<bool> CheckBookingHindrances(CheckBookingHindranceRequest checkBookingHindranceRequest)
         {
             return await _trafikverketMgr.CheckBookingHindrances(checkBookingHindranceRequest.SocialSecurityNumber, checkBookingHindranceRequest.LicenseId);
         }
-
-
+        
+        #endregion
     }
 }

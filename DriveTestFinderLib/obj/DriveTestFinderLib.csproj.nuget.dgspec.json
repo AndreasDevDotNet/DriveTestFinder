@@ -1,39 +1,41 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\andre\\Source\\Repos\\AndreasDevDotNet\\DriveTestFinder\\DriveTestFinderLib\\DriveTestFinderLib.csproj": {}
+    "C:\\Users\\andreas.kristiansen\\Source\\Repos\\AndreasDevDotNet\\DriveTestFinder\\DriveTestFinderLib\\DriveTestFinderLib.csproj": {}
   },
   "projects": {
-    "C:\\Users\\andre\\Source\\Repos\\AndreasDevDotNet\\DriveTestFinder\\DriveTestFinderLib\\DriveTestFinderLib.csproj": {
+    "C:\\Users\\andreas.kristiansen\\Source\\Repos\\AndreasDevDotNet\\DriveTestFinder\\DriveTestFinderLib\\DriveTestFinderLib.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\andre\\Source\\Repos\\AndreasDevDotNet\\DriveTestFinder\\DriveTestFinderLib\\DriveTestFinderLib.csproj",
+        "projectUniqueName": "C:\\Users\\andreas.kristiansen\\Source\\Repos\\AndreasDevDotNet\\DriveTestFinder\\DriveTestFinderLib\\DriveTestFinderLib.csproj",
         "projectName": "DriveTestFinderLib",
-        "projectPath": "C:\\Users\\andre\\Source\\Repos\\AndreasDevDotNet\\DriveTestFinder\\DriveTestFinderLib\\DriveTestFinderLib.csproj",
-        "packagesPath": "C:\\Users\\andre\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\andre\\Source\\Repos\\AndreasDevDotNet\\DriveTestFinder\\DriveTestFinderLib\\obj\\",
+        "projectPath": "C:\\Users\\andreas.kristiansen\\Source\\Repos\\AndreasDevDotNet\\DriveTestFinder\\DriveTestFinderLib\\DriveTestFinderLib.csproj",
+        "packagesPath": "C:\\Users\\andreas.kristiansen\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\andreas.kristiansen\\Source\\Repos\\AndreasDevDotNet\\DriveTestFinder\\DriveTestFinderLib\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\andre\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\andreas.kristiansen\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 19.2.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\DevExpress 19.2\\Components\\System\\Components\\Packages": {},
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "http://tfs02.pector.se/tfs/Products/_packaging/PectorPacs/nuget/v3/index.json": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\andre\\Source\\Repos\\AndreasDevDotNet\\DriveTestFinder\\DriveTestFinderRepository\\DriveTestFinderRepository.csproj": {
-                "projectPath": "C:\\Users\\andre\\Source\\Repos\\AndreasDevDotNet\\DriveTestFinder\\DriveTestFinderRepository\\DriveTestFinderRepository.csproj"
+              "C:\\Users\\andreas.kristiansen\\Source\\Repos\\AndreasDevDotNet\\DriveTestFinder\\DriveTestFinderRepository\\DriveTestFinderRepository.csproj": {
+                "projectPath": "C:\\Users\\andreas.kristiansen\\Source\\Repos\\AndreasDevDotNet\\DriveTestFinder\\DriveTestFinderRepository\\DriveTestFinderRepository.csproj"
               }
             }
           }
@@ -82,28 +84,30 @@
         }
       }
     },
-    "C:\\Users\\andre\\Source\\Repos\\AndreasDevDotNet\\DriveTestFinder\\DriveTestFinderRepository\\DriveTestFinderRepository.csproj": {
+    "C:\\Users\\andreas.kristiansen\\Source\\Repos\\AndreasDevDotNet\\DriveTestFinder\\DriveTestFinderRepository\\DriveTestFinderRepository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\andre\\Source\\Repos\\AndreasDevDotNet\\DriveTestFinder\\DriveTestFinderRepository\\DriveTestFinderRepository.csproj",
+        "projectUniqueName": "C:\\Users\\andreas.kristiansen\\Source\\Repos\\AndreasDevDotNet\\DriveTestFinder\\DriveTestFinderRepository\\DriveTestFinderRepository.csproj",
         "projectName": "DriveTestFinderRepository",
-        "projectPath": "C:\\Users\\andre\\Source\\Repos\\AndreasDevDotNet\\DriveTestFinder\\DriveTestFinderRepository\\DriveTestFinderRepository.csproj",
-        "packagesPath": "C:\\Users\\andre\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\andre\\Source\\Repos\\AndreasDevDotNet\\DriveTestFinder\\DriveTestFinderRepository\\obj\\",
+        "projectPath": "C:\\Users\\andreas.kristiansen\\Source\\Repos\\AndreasDevDotNet\\DriveTestFinder\\DriveTestFinderRepository\\DriveTestFinderRepository.csproj",
+        "packagesPath": "C:\\Users\\andreas.kristiansen\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\andreas.kristiansen\\Source\\Repos\\AndreasDevDotNet\\DriveTestFinder\\DriveTestFinderRepository\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\andre\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\andreas.kristiansen\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 19.2.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\DevExpress 19.2\\Components\\System\\Components\\Packages": {},
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "http://tfs02.pector.se/tfs/Products/_packaging/PectorPacs/nuget/v3/index.json": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {

@@ -31,21 +31,29 @@ namespace DriveTestFinderLib.Model.DTO
     {
         public bool Equals(TestOccasionData x, TestOccasionData y)
         {
-            var equalsStringX = x.ExaminationDate.ToString("yyyy-MM-dd").Trim() + x.ExaminationTime.Trim() + x.LocationId + x.TestTypeId;
-            var equalsStringY = y.ExaminationDate.ToString("yyyy-MM-dd").Trim() + y.ExaminationTime.Trim() + y.LocationId + y.TestTypeId;
-
-            return equalsStringX == equalsStringY;
+            return x.TestTypeId == y.TestTypeId &&
+                   x.LanguageId == y.LanguageId &&
+                   x.LocationId == y.LocationId &&
+                   x.VehicleTypeId == y.VehicleTypeId &&
+                   x.ExaminationDate.ToString("yyyyMMdd") == y.ExaminationDate.ToString("yyyyMMdd") &&
+                   x.ExaminationTime.Trim() == y.ExaminationTime.Trim() &&
+                   x.UserId == y.UserId;
         }
 
         public int GetHashCode(TestOccasionData obj)
         {
             int hashCode = 13;
 
-            var hashString = obj.ExaminationDate.ToString("yyyy-MM-dd").Trim() + obj.ExaminationTime.Trim() + obj.LocationId + obj.TestTypeId;
+            hashCode = (hashCode * 7) + 
+                       obj.ExaminationDate.ToString("yyyyMMdd").GetHashCode() ^ 
+                       obj.ExaminationTime.Trim().GetHashCode() ^ 
+                       obj.LocationId.GetHashCode() ^
+                       obj.LanguageId.GetHashCode() ^
+                       obj.TestTypeId.GetHashCode() ^ 
+                       obj.VehicleTypeId.GetHashCode() ^
+                       obj.UserId.GetHashCode();
 
-            hashCode = (hashCode * 7) + hashString.GetHashCode(); ;
-
-            return hashCode;
+            return hashCode.GetHashCode();
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using DriveTestFinderRepository.Entities;
 using Microsoft.EntityFrameworkCore;
+using System;
 
 namespace DriveTestFinderRepository
 {
@@ -35,6 +36,7 @@ namespace DriveTestFinderRepository
             {
                 optionsBuilder.UseSqlServer(_connectionString);
                 optionsBuilder.UseLazyLoadingProxies();
+                //optionsBuilder.LogTo(Console.WriteLine);
             }
         }
 

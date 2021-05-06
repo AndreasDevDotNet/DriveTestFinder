@@ -1,5 +1,6 @@
 ﻿using DriveTestFinderRepository.Entities;
 using EFCore.BulkExtensions;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,14 +18,14 @@ namespace DriveTestFinderRepository
             _dbContext = new DriveTestFinderMasterContext(connectionString);
         }
 
-        public IEnumerable<TEntity> Find(Expression<Func<TEntity, bool>> where)
+        public List<TEntity> Find(Expression<Func<TEntity, bool>> where)
         {
-            return _dbContext.Set<TEntity>().Where(where);
+            return _dbContext.Set<TEntity>().Where(where).ToList();
         }
 
-        public IEnumerable<TEntity> GetAll()
+        public List<TEntity> GetAll()
         {
-            return _dbContext.Set<TEntity>();
+            return _dbContext.Set<TEntity>().ToList();
         }
 
         public IQueryable<TEntity> FindQueryable(Expression<Func<TEntity, bool>> where)
@@ -42,18 +43,38 @@ namespace DriveTestFinderRepository
             return _dbContext.Set<TEntity>().SingleOrDefault(where);
         }
 
-        public async Task Add(TEntity entity, bool saveChanges = false)
+        public async Task AddAsync(TEntity entity, bool saveChanges = false)
         {
             await _dbContext.Set<TEntity>().AddAsync(entity);
             if(saveChanges)  await _dbContext.SaveChangesAsync();
         }
 
-        public async Task AddMany(IList<TEntity> entities)
+        public void Add(TEntity entity, bool saveChanges = false)
+        {
+            _dbContext.Set<TEntity>().Add(entity);
+            if (saveChanges) _dbContext.SaveChanges();
+        }
+
+        public void AddMany(IList<TEntity> entities)
+        {
+            _dbContext.BulkInsert(entities);
+        }
+        public async Task AddManyAsync(IList<TEntity> entities)
         {
             await _dbContext.BulkInsertAsync(entities);
         }
 
-        public async Task DeleteMany(IList<TEntity> entities)
+        public void UpdateMany(IList<TEntity> entities)
+        {
+            _dbContext.BulkUpdate(entities);
+        }
+
+        public async Task UpdateManyAsync(IList<TEntity> entities)
+        {
+            await _dbContext.BulkUpdateAsync(entities);
+        }
+
+        public async Task DeleteManyAsync(IList<TEntity> entities)
         {
             await _dbContext.BulkDeleteAsync(entities);
         }
@@ -72,6 +93,16 @@ namespace DriveTestFinderRepository
         public async Task<int> SaveChanges()
         {
             return await _dbContext.SaveChangesAsync();
+        }
+
+        public void DisableChangeTracking()
+        {
+            _dbContext.ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking;
+        }
+
+        public void EnableChangeTracking()
+        {
+            _dbContext.ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.TrackAll;
         }
     }
 }
