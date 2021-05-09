@@ -16,7 +16,7 @@ namespace DriveTestFinderAPI.Controllers
 
         public SearchController(IConfiguration configuration)
         {
-            _searchMgr = new SearchMgr(configuration.GetConnectionString("DriveTestMaster"),configuration["DriveTestConfig:TrafikverketBaseUri"];);
+            _searchMgr = new SearchMgr(configuration.GetConnectionString("DriveTestMaster"),configuration["DriveTestConfig:TrafikverketBaseUri"]);
         }
 
         [Route("[action]")]
@@ -41,7 +41,7 @@ namespace DriveTestFinderAPI.Controllers
         {
             try
             {
-                var bookingHindranceResponse = await _searchMgr.CanBookTest(checkBookingHindranceRequest);
+                var bookingHindranceResponse = await _searchMgr.CheckBookingHindrances(checkBookingHindranceRequest);
 
                 return Ok(bookingHindranceResponse);
             }

@@ -18,7 +18,6 @@ C:\Users\andreas.kristiansen\Source\Repos\AndreasDevDotNet\DriveTestFinder\Drive
 C:\Users\andreas.kristiansen\Source\Repos\AndreasDevDotNet\DriveTestFinder\DriveTestFinderRepository\bin\Debug\net5.0\DriveTestFinderRepository.dll
 C:\Users\andreas.kristiansen\Source\Repos\AndreasDevDotNet\DriveTestFinder\DriveTestFinderRepository\bin\Debug\net5.0\ref\DriveTestFinderRepository.dll
 C:\Users\andreas.kristiansen\Source\Repos\AndreasDevDotNet\DriveTestFinder\DriveTestFinderRepository\bin\Debug\net5.0\DriveTestFinderRepository.pdb
-C:\Users\andreas.kristiansen\Source\Repos\AndreasDevDotNet\DriveTestFinder\DriveTestFinderRepository\obj\Debug\net5.0\DriveTestFinderRepository.csprojAssemblyReference.cache
 C:\Users\andreas.kristiansen\Source\Repos\AndreasDevDotNet\DriveTestFinder\DriveTestFinderRepository\obj\Debug\net5.0\DriveTestFinderRepository.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\andreas.kristiansen\Source\Repos\AndreasDevDotNet\DriveTestFinder\DriveTestFinderRepository\obj\Debug\net5.0\DriveTestFinderRepository.AssemblyInfoInputs.cache
 C:\Users\andreas.kristiansen\Source\Repos\AndreasDevDotNet\DriveTestFinder\DriveTestFinderRepository\obj\Debug\net5.0\DriveTestFinderRepository.AssemblyInfo.cs
@@ -28,3 +27,4 @@ C:\Users\andreas.kristiansen\Source\Repos\AndreasDevDotNet\DriveTestFinder\Drive
 C:\Users\andreas.kristiansen\Source\Repos\AndreasDevDotNet\DriveTestFinder\DriveTestFinderRepository\obj\Debug\net5.0\DriveTestFinderRepository.pdb
 C:\Users\andreas.kristiansen\Source\Repos\AndreasDevDotNet\DriveTestFinder\DriveTestFinderRepository\obj\Debug\net5.0\DriveTestFinderRepository.genruntimeconfig.cache
 C:\Users\andre\Source\Repos\AndreasDevDotNet\DriveTestFinder\DriveTestFinderRepository\obj\Debug\net5.0\DriveTestFinderRepository.csprojAssemblyReference.cache
+C:\Users\andreas.kristiansen\Source\Repos\AndreasDevDotNet\DriveTestFinder\DriveTestFinderRepository\obj\Debug\net5.0\DriveTestFinderRepository.csprojAssemblyReference.cache

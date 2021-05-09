@@ -31,3 +31,6 @@ C:\Users\andre\Source\Repos\AndreasDevDotNet\DriveTestFinder\DriveTestFinderLib\
 C:\Users\andre\Source\Repos\AndreasDevDotNet\DriveTestFinder\DriveTestFinderLib\bin\Debug\net5.0\DriveTestFinderRepository.dll
 C:\Users\andre\Source\Repos\AndreasDevDotNet\DriveTestFinder\DriveTestFinderLib\bin\Debug\net5.0\DriveTestFinderRepository.pdb
 C:\Users\andre\Source\Repos\AndreasDevDotNet\DriveTestFinder\DriveTestFinderLib\obj\Debug\net5.0\DriveTestFinderLib.csproj.CopyComplete
+C:\Users\andreas.kristiansen\Source\Repos\AndreasDevDotNet\DriveTestFinder\DriveTestFinderLib\bin\Debug\net5.0\DriveTestFinderRepository.dll
+C:\Users\andreas.kristiansen\Source\Repos\AndreasDevDotNet\DriveTestFinder\DriveTestFinderLib\bin\Debug\net5.0\DriveTestFinderRepository.pdb
+C:\Users\andreas.kristiansen\Source\Repos\AndreasDevDotNet\DriveTestFinder\DriveTestFinderLib\obj\Debug\net5.0\DriveTestFinderLib.csproj.CopyComplete
