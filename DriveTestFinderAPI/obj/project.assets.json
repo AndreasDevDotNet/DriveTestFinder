@@ -7279,41 +7279,34 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\andreas.kristiansen\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\andre\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\andreas.kristiansen\\Source\\Repos\\AndreasDevDotNet\\DriveTestFinder\\DriveTestFinderAPI\\DriveTestFinderAPI.csproj",
+      "projectUniqueName": "C:\\Users\\andre\\Source\\Repos\\AndreasDevDotNet\\DriveTestFinder\\DriveTestFinderAPI\\DriveTestFinderAPI.csproj",
       "projectName": "DriveTestFinderAPI",
-      "projectPath": "C:\\Users\\andreas.kristiansen\\Source\\Repos\\AndreasDevDotNet\\DriveTestFinder\\DriveTestFinderAPI\\DriveTestFinderAPI.csproj",
-      "packagesPath": "C:\\Users\\andreas.kristiansen\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\andreas.kristiansen\\Source\\Repos\\AndreasDevDotNet\\DriveTestFinder\\DriveTestFinderAPI\\obj\\",
+      "projectPath": "C:\\Users\\andre\\Source\\Repos\\AndreasDevDotNet\\DriveTestFinder\\DriveTestFinderAPI\\DriveTestFinderAPI.csproj",
+      "packagesPath": "C:\\Users\\andre\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\andre\\Source\\Repos\\AndreasDevDotNet\\DriveTestFinder\\DriveTestFinderAPI\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\andreas.kristiansen\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 19.2.config",
+        "C:\\Users\\andre\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\DevExpress 19.2\\Components\\System\\Components\\Packages": {},
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "http://tfs02.pector.se/tfs/Products/_packaging/PectorPacs/nuget/v3/index.json": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\andreas.kristiansen\\Source\\Repos\\AndreasDevDotNet\\DriveTestFinder\\DriveTestFinderLib\\DriveTestFinderLib.csproj": {
-              "projectPath": "C:\\Users\\andreas.kristiansen\\Source\\Repos\\AndreasDevDotNet\\DriveTestFinder\\DriveTestFinderLib\\DriveTestFinderLib.csproj"
+            "C:\\Users\\andre\\Source\\Repos\\AndreasDevDotNet\\DriveTestFinder\\DriveTestFinderLib\\DriveTestFinderLib.csproj": {
+              "projectPath": "C:\\Users\\andre\\Source\\Repos\\AndreasDevDotNet\\DriveTestFinder\\DriveTestFinderLib\\DriveTestFinderLib.csproj"
             }
           }
         }
@@ -7359,7 +7352,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

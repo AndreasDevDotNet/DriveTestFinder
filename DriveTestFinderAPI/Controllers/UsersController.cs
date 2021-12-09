@@ -1,9 +1,12 @@
 ﻿using DriveTestFinderLib.Managers;
 using DriveTestFinderLib.Model.DTO;
+using DriveTestFinderLib.Model.Response;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
+using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace DriveTestFinderAPI.Controllers
 {
@@ -21,9 +24,24 @@ namespace DriveTestFinderAPI.Controllers
         [Route("[action]")]
         [Authorize(Policy = "Admin")]
         [HttpGet]
-        public ActionResult<List<UserData>> GetAll()
+        public async Task<List<UserData>> GetAll()
         {
-            return _userMgr.GetAllUsers();
+            return await _userMgr.GetAllUsers();
+        }
+
+        [Route("[action]")]
+        [HttpPost]
+        public async Task<IActionResult> Register([FromBody] UserData userData)
+        {
+            try
+            {
+                var resp = await _userMgr.RegisterUser(userData);
+                return Ok(resp);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex);
+            }
         }
     }
 }

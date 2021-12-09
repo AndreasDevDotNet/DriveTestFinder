@@ -40,9 +40,16 @@ namespace DriveTestFinderAPI.Controllers
                     if (userData.Role == Enums.RoleEnum.Admin)
                     {
                         Claims.Add(new Claim("type", "Admin"));
+                        Claims.Add(new Claim("type", "User"));
                     }
-                    else
+                    else if(userData.Role == Enums.RoleEnum.User)
                     {
+                        Claims.Add(new Claim("type", "User"));
+                    }
+                    else if(userData.Role == Enums.RoleEnum.Application)
+                    {
+                        Claims.Add(new Claim("type", "Application"));
+                        Claims.Add(new Claim("type", "Admin"));
                         Claims.Add(new Claim("type", "User"));
                     }
 

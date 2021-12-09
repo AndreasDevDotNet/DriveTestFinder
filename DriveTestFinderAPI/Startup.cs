@@ -48,6 +48,7 @@ namespace DriveTestFinderAPI
             {
                 cfg.AddPolicy("Admin", policy => policy.RequireClaim("type", "Admin"));
                 cfg.AddPolicy("User", policy => policy.RequireClaim("type", "User"));
+                cfg.AddPolicy("Application", policy => policy.RequireClaim("type", "Application"));
             });
 
             services.AddControllers();

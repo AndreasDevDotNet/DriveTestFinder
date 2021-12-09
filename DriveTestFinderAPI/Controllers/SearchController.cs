@@ -1,6 +1,6 @@
 ﻿using DriveTestFinderLib.Managers;
-using DriveTestFinderLib.Model.DTO;
 using DriveTestFinderLib.Model.Request;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using System;
@@ -20,6 +20,7 @@ namespace DriveTestFinderAPI.Controllers
         }
 
         [Route("[action]")]
+        [Authorize(Policy = "User")]
         [HttpPost]
         public async Task<IActionResult> SearchTests([FromBody] SearchRequest searchTestRequest)
         {

@@ -1,4 +1,3 @@
-C:\Users\andre\Source\Repos\AndreasDevDotNet\DriveTestFinder\DriveTestFinderAPI\obj\Debug\net5.0\DriveTestFinderAPI.csprojAssemblyReference.cache
 C:\Users\andre\Source\Repos\AndreasDevDotNet\DriveTestFinder\DriveTestFinderAPI\obj\Debug\net5.0\DriveTestFinderAPI.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\andre\Source\Repos\AndreasDevDotNet\DriveTestFinder\DriveTestFinderAPI\obj\Debug\net5.0\DriveTestFinderAPI.AssemblyInfoInputs.cache
 C:\Users\andre\Source\Repos\AndreasDevDotNet\DriveTestFinder\DriveTestFinderAPI\obj\Debug\net5.0\DriveTestFinderAPI.AssemblyInfo.cs
@@ -50,7 +49,6 @@ C:\Users\andre\Source\Repos\AndreasDevDotNet\DriveTestFinder\DriveTestFinderAPI\
 C:\Users\andre\Source\Repos\AndreasDevDotNet\DriveTestFinder\DriveTestFinderAPI\bin\Debug\net5.0\DriveTestFinderLib.pdb
 C:\Users\andre\Source\Repos\AndreasDevDotNet\DriveTestFinder\DriveTestFinderAPI\bin\Debug\net5.0\DriveTestFinderRepository.pdb
 C:\Users\andre\Source\Repos\AndreasDevDotNet\DriveTestFinder\DriveTestFinderAPI\obj\Debug\net5.0\staticwebassets\DriveTestFinderAPI.StaticWebAssets.Manifest.cache
-C:\Users\andre\Source\Repos\AndreasDevDotNet\DriveTestFinder\DriveTestFinderAPI\obj\Debug\net5.0\staticwebassets\DriveTestFinderAPI.StaticWebAssets.xml
 C:\Users\andre\Source\Repos\AndreasDevDotNet\DriveTestFinder\DriveTestFinderAPI\obj\Debug\net5.0\scopedcss\bundle\DriveTestFinderAPI.styles.css
 C:\Users\andre\Source\Repos\AndreasDevDotNet\DriveTestFinder\DriveTestFinderAPI\obj\Debug\net5.0\DriveTestFinderAPI.RazorTargetAssemblyInfo.cache
 C:\Users\andre\Source\Repos\AndreasDevDotNet\DriveTestFinder\DriveTestFinderAPI\obj\Debug\net5.0\DriveTestFinderAPI.csproj.CopyComplete
@@ -138,3 +136,4 @@ C:\Users\andreas.kristiansen\Source\Repos\AndreasDevDotNet\DriveTestFinder\Drive
 C:\Users\andreas.kristiansen\Source\Repos\AndreasDevDotNet\DriveTestFinder\DriveTestFinderAPI\obj\Debug\net5.0\DriveTestFinderAPI.RazorTargetAssemblyInfo.cache
 C:\Users\andreas.kristiansen\Source\Repos\AndreasDevDotNet\DriveTestFinder\DriveTestFinderAPI\obj\Debug\net5.0\DriveTestFinderAPI.csproj.CopyComplete
 C:\Users\andreas.kristiansen\Source\Repos\AndreasDevDotNet\DriveTestFinder\DriveTestFinderAPI\obj\Debug\net5.0\DriveTestFinderAPI.genruntimeconfig.cache
+C:\Users\andre\Source\Repos\AndreasDevDotNet\DriveTestFinder\DriveTestFinderAPI\obj\Debug\net5.0\DriveTestFinderAPI.csproj.AssemblyReference.cache
