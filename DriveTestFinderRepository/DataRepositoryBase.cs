@@ -1,6 +1,7 @@
 ﻿using DriveTestFinderRepository.Entities;
 using EFCore.BulkExtensions;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,14 +19,14 @@ namespace DriveTestFinderRepository
             _dbContext = new DriveTestFinderMasterContext(connectionString);
         }
 
-        public List<TEntity> Find(Expression<Func<TEntity, bool>> where)
+        public async Task<List<TEntity>> Find(Expression<Func<TEntity, bool>> where)
         {
-            return _dbContext.Set<TEntity>().Where(where).ToList();
+            return await _dbContext.Set<TEntity>().Where(where).ToListAsync();
         }
 
-        public List<TEntity> GetAll()
+        public async Task<List<TEntity>> GetAll()
         {
-            return _dbContext.Set<TEntity>().ToList();
+            return await _dbContext.Set<TEntity>().ToListAsync();
         }
 
         public IQueryable<TEntity> FindQueryable(Expression<Func<TEntity, bool>> where)
@@ -43,10 +44,12 @@ namespace DriveTestFinderRepository
             return _dbContext.Set<TEntity>().SingleOrDefault(where);
         }
 
-        public async Task AddAsync(TEntity entity, bool saveChanges = false)
+        public async Task<EntityEntry<TEntity>> AddAsync(TEntity entity, bool saveChanges = false)
         {
-            await _dbContext.Set<TEntity>().AddAsync(entity);
+            var enity = await _dbContext.Set<TEntity>().AddAsync(entity);
             if(saveChanges)  await _dbContext.SaveChangesAsync();
+
+            return enity;
         }
 
         public void Add(TEntity entity, bool saveChanges = false)

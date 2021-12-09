@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-#nullable disable
-
+﻿
 namespace DriveTestFinderRepository.Entities
 {
     public partial class LicenseTestType : IEntity

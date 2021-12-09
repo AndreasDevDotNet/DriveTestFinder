@@ -9,6 +9,7 @@ namespace DriveTestFinderRepository.Entities
     {
         public TestType()
         {
+            LocationTestTypes = new HashSet<LocationTestType>();
             LicenseTestTypes = new HashSet<LicenseTestType>();
             TestOccasions = new HashSet<TestOccasion>();
             UserSearches = new HashSet<UserSearch>();
@@ -17,6 +18,7 @@ namespace DriveTestFinderRepository.Entities
         public int TestTypeId { get; set; }
         public string Description { get; set; }
 
+        public virtual ICollection<LocationTestType> LocationTestTypes { get; set; }
         public virtual ICollection<LicenseTestType> LicenseTestTypes { get; set; }
         public virtual ICollection<TestOccasion> TestOccasions { get; set; }
         public virtual ICollection<UserSearch> UserSearches { get; set; }

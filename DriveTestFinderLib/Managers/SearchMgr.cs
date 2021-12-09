@@ -34,7 +34,7 @@ namespace DriveTestFinderLib.Managers
 
             if (searchRequest.SaveResultInDB && newTestOccasionDataList.Count > 0)
             {
-                resetIsNewFlag(testOccasionsDbList);
+                await resetIsNewFlag(testOccasionsDbList);
                 await saveTestOccasionsInDB(newTestOccasionDataList);
             }
 

@@ -29,6 +29,7 @@ namespace DriveTestFinderRepository
         public virtual DbSet<UserRole> UserRoles { get; set; }
         public virtual DbSet<UserSearch> UserSearches { get; set; }
         public virtual DbSet<VehicleType> VehicleTypes { get; set; }
+        public virtual DbSet<LocationTestType> LocationTestTypes { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -88,6 +89,25 @@ namespace DriveTestFinderRepository
                 entity.Property(e => e.LocationId).ValueGeneratedNever();
 
                 entity.Property(e => e.Description).HasMaxLength(50);
+            });
+
+            modelBuilder.Entity<LocationTestType>(entity =>
+            {
+                entity.HasKey(e => new { e.LocationId, e.TestTypeId });
+
+                entity.ToTable("Location_TestType");
+
+                entity.HasOne(d => d.Location)
+                    .WithMany(p => p.LocationTestTypes)
+                    .HasForeignKey(d => d.LocationId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Location_TestType_Location");
+
+                entity.HasOne(d => d.TestType)
+                    .WithMany(p => p.LocationTestTypes)
+                    .HasForeignKey(d => d.TestTypeId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Location_TestType_TestType");
             });
 
             modelBuilder.Entity<Subscription>(entity =>

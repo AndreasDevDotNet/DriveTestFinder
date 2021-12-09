@@ -54,7 +54,7 @@ namespace DriveTestFinderLib.Managers
         {
             var occasionData = JObject.Parse(testOccasionsJson);
 
-            var occasionDataList = (JArray)occasionData["data"];
+            var occasionDataList = (JArray)occasionData["data"]["bundles"];
 
             var testOccasionList = new List<TestOccasionJson>();
 
